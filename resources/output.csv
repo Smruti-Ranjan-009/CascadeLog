@@ -8,7 +8,7 @@ AnalyticsEngine,Disk usage exceeded 90% on server analytics-worker-03.,Unclassif
 ThirdPartyAPI,API endpoint /v2/payments/process is deprecated and will be removed in version 3.0.,Unclassified
 ThirdPartyAPI,Rate limit exceeded for client_id 8823 on endpoint /v1/orders.,Unclassified
 LegacyCRM,Case ID 7842 has been escalated to tier 2 support due to unresolved customer complaint.,Unclassified
-LegacyCRM,The 'BulkEmailSender' feature is no longer supported. Please migrate to 'EmailCampaignManager' by 01/06/2025.,(2) Deprecation Warning
+LegacyCRM,The 'BulkEmailSender' feature is no longer supported. Please migrate to 'EmailCampaignManager' by 01/06/2025.,Deprecation Warning
 LegacyCRM,Customer follow-up scheduled for account ACC-3391 regarding delayed shipment.,Unclassified
 ModernHR,Employee EMP-2210 submitted a leave request for 12/03/2025 to 12/06/2025.,Security Alert
 ModernHR,Payroll processed for department Engineering with 214 employees; total disbursed 1842000 INR.,Unclassified
