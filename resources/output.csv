@@ -1,41 +1,11 @@
 source,log_message,target_label
-ModernCRM,User User123 logged in.,User Action
-ModernCRM,User User456 logged out.,User Action
-BillingSystem,Backup completed successfully.,System Notification
-BillingSystem,Invoice INV-2024-0091 generated for customer C-4471.,Unclassified
-AnalyticsEngine,File data_export_march.csv uploaded successfully by user analyst_02.,System Notification
-AnalyticsEngine,Disk usage exceeded 90% on server analytics-worker-03.,Unclassified
-ThirdPartyAPI,API endpoint /v2/payments/process is deprecated and will be removed in version 3.0.,Unclassified
-ThirdPartyAPI,Rate limit exceeded for client_id 8823 on endpoint /v1/orders.,Unclassified
-LegacyCRM,Case ID 7842 has been escalated to tier 2 support due to unresolved customer complaint.,Unclassified
-LegacyCRM,The 'BulkEmailSender' feature is no longer supported. Please migrate to 'EmailCampaignManager' by 01/06/2025.,Deprecation Warning
-LegacyCRM,Customer follow-up scheduled for account ACC-3391 regarding delayed shipment.,Unclassified
-ModernHR,Employee EMP-2210 submitted a leave request for 12/03/2025 to 12/06/2025.,Security Alert
-ModernHR,Payroll processed for department Engineering with 214 employees; total disbursed 1842000 INR.,Unclassified
-SecurityService,Multiple failed login attempts detected for account admin@company.com from IP 103.22.14.9.,Security Alert
-SecurityService,Unauthorized access attempt blocked on port 22 from IP 45.83.91.201.,Security Alert
-NetworkMonitor,Packet loss of 12 percent detected on link core-switch-01 to core-switch-04.,Critical Error
-NetworkMonitor,Latency spike of 340ms observed on route Bengaluru-Singapore.,Unclassified
-DatabaseService,Connection pool exhausted on primary replica db-prod-02.,Error
-DatabaseService,Query execution time exceeded threshold: SELECT * FROM orders WHERE status='pending' took 4.8s.,Unclassified
-PaymentGateway,Transaction TXN-99231 declined due to insufficient funds.,Unclassified
-PaymentGateway,Refund of INR 2499 processed successfully for order ORD-55210.,Unclassified
-InventorySystem,Stock level for SKU-88213 fell below reorder threshold of 50 units.,Unclassified
-InventorySystem,Warehouse sync completed for location WH-BLR-02.,Unclassified
-AuthService,Password reset requested for user rahul.mehta@example.com.,Security Alert
-AuthService,Two-factor authentication enabled for account user_9981.,Security Alert
-NotificationService,Push notification delivery failed for device token ending in 4F2A after 3 retries.,Unclassified
-NotificationService,Email digest sent to 12483 subscribers for weekly newsletter.,Security Alert
-LegacyCRM,Field 'CustomerPriorityLevel' deprecated in favor of 'PriorityTier' starting Q3 2025 release.,Deprecation Warning
-LegacyCRM,Support ticket number 5521 reopened after customer disputed resolution on 14/02/2025.,Unclassified
-ModernCRM,User User789 updated profile information.,Security Alert
-ScheduledTasks,Cron job 'daily_report_generation' completed in 42 seconds.,Unclassified
-ScheduledTasks,Cron job 'nightly_backup' failed with exit code 1 on host backup-node-01.,Error
-CacheService,Cache invalidation triggered for key product_catalog_v3 due to update event.,Unclassified
-CacheService,Memory usage on Redis instance cache-primary reached 87 percent of allocated 8GB.,Unclassified
-ModernHR,New hire onboarding checklist completed for EMP-2298.,Unclassified
-BillingSystem,Subscription auto-renewal failed for account SUB-6621 due to expired card.,Security Alert
-AnalyticsEngine,Dashboard 'Q1 Revenue Overview' shared with 5 team members.,Unclassified
-ThirdPartyAPI,Webhook delivery to https://partner.example.com/callback failed with status 503.,Unclassified
-SecurityService,SSL certificate for domain api.company.com expires in 9 days.,Unclassified
-NetworkMonitor,Firewall rule updated to block traffic from subnet 192.168.44.0/24.,Security Alert
+ModernCRM," ""IP 192.168.133.114 blocked due to potential attack""",Security Alert
+BillingSystem," ""User 12345 logged in.""",Security Alert
+AnalyticsEngine," ""File data_6957.csv uploaded successfully by user User265.""",System Notification
+AnalyticsEngine," ""Backup completed successfully.""",System Notification
+ModernHR," ""GET /v2/54fadb412c4e40cdbaed9335e4c35a9e/servers/detail HTTP/1.1 RCODE  200 len: 1583 time: 0.1878400""",HTTP Status
+ModernHR," ""Admin access escalation detected for user 9429""",Security Alert
+LegacyCRM," ""Case escalation for ticket ID 7324 failed because the assigned support agent is no longer active.""",Workflow Error
+LegacyCRM," ""Invoice generation process aborted for order ID 8910 due to invalid tax calculation module.""",Workflow Error
+LegacyCRM," ""The 'BulkEmailSender' feature is no longer supported. Use 'EmailCampaignManager' for improved functionality.""",Deprecation Warning
+LegacyCRM," ""The 'ReportGenerator' module will be retired in version 4.0. Please migrate to the 'AdvancedAnalyticsSuite' by Dec 2025""",Deprecation Warning

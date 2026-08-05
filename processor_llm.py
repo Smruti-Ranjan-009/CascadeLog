@@ -10,28 +10,34 @@ groq = Groq()
 
 def classify_with_llm(log_msg):
     """
-    Generate a variant of the input sentence. For example,
-    If input sentence is "User session timed out unexpectedly, user ID: 9250.",
-    variant would be "Session timed out for user 9251"
+    Classify a log message into one of a small set of categories using
+    an LLM fallback. This is the last tier in the cascade, used only
+    when regex and the embedding + logistic regression classifier
+    can't confidently label the message.
     """
-    prompt = f'''Classify the log message into one of these categories: 
-    (1) Workflow Error, (2) Deprecation Warning.
+    prompt = f'''Classify the log message into one of these categories:
+    Workflow Error, Deprecation Warning.
     If you can't figure out a category, use "Unclassified".
-    Put the category inside <category> </category> tags. 
+    Put ONLY the category name inside <category> </category> tags.
+    Do not include numbers, parentheses, or any other text inside the tags.
     Log message: {log_msg}'''
 
     chat_completion = groq.chat.completions.create(
         messages=[{"role": "user", "content": prompt}],
         # model="llama-3.3-70b-versatile",
         model="openai/gpt-oss-20b",
-        temperature=0.5
+        temperature=0
     )
 
     content = chat_completion.choices[0].message.content
-    match = re.search(r'<category>(.*)<\/category>', content, flags=re.DOTALL)
+    match = re.search(r'<category>(.*?)<\/category>', content, flags=re.DOTALL)
     category = "Unclassified"
     if match:
-        category = match.group(1)
+        category = match.group(1).strip()
+        # Defensive cleanup: strip a leading "(n) " if the model includes
+        # the option number anyway, and collapse any stray whitespace.
+        category = re.sub(r'^\(\d+\)\s*', '', category)
+        category = re.sub(r'\s+', ' ', category).strip()
 
     return category
 
